@@ -1,0 +1,70 @@
+// _sass/custom/_custom.scss
+
+/* Import a clean sans-serif font (optional, use system fonts first) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* --- Variable Overrides (Check theme's _variables.scss for available vars) --- */
+// Uncomment and modify variables provided by the theme for best results
+// Example (variable names might differ slightly, inspect theme defaults):
+// $text-color: #1f1f1f; // Darker gray text
+// $body-background-color: #ffffff; // Ensure white background
+// $font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; // Apply font
+// $font-size-base: 1rem; // Or 1.1rem for slightly larger text
+// $line-height-base: 1.7; // Increase line height for readability
+// $heading-font-weight: 600; // Notion-like semi-bold headings
+// $link-color: #0d6efd; // A standard blue for links
+
+/* --- Direct CSS Overrides --- */
+
+body {
+  /* Apply font here if variable override doesn't work or isn't available */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.7; /* More whitespace between lines */
+  background-color: #fff; /* Force white */
+  color: #1f1f1f; /* Dark grey text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; /* Semi-bold */
+  margin-top: 1.8em; /* More space above headings */
+  margin-bottom: 0.6em; /* Less space below headings */
+}
+
+a {
+  text-decoration: none; /* No underlines by default */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Increase content area padding for whitespace */
+.main-content-wrap .post-content,
+.main-content-wrap .page-content {
+   padding-top: 1rem;
+   padding-bottom: 2rem;
+}
+
+/* Optional: Limit content width for better readability */
+.main-content-wrap {
+   max-width: 860px; // Adjust as needed
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/* Optional: Simplify code blocks */
+pre, code {
+  // background-color: #f8f9fa; // Lighter background for code
+  // border: none; // Remove borders if any
+  font-size: 0.9em;
+}
+
+/* Optional: Hide elements you don't want */
+// .post-meta, .post-tags {
+//   display: none;
+// }
+
+// .sidebar { // Example: Hide sidebar completely if desired
+//  display: none;
+// }
+// Adjust main content width if sidebar is hidden
