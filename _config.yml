@@ -1,0 +1,98 @@
+# _config.yml
+
+# --- Basic Jekyll Settings ---
+title: Hidden Network # Your Blog Title
+author: Vijai Rangan
+email: vijaik2k7@gmail.com
+description: >- # Your blog description
+  Investigating my thoughts, one at a time.
+
+# --- URL & Baseurl ---
+# If using a User site (your-username.github.io), keep baseurl empty or commented out
+# baseurl: ""
+# If using a Project site (e.g., your-username.github.io/my-blog), set baseurl:
+# baseurl: "/my-notion-style-blog" # Example for project site, REMOVE IF USER SITE
+url: "https://vijaik2k7.github.io" # Your main site URL
+
+# --- Theme Settings (TeXt Theme) ---
+remote_theme: kitian616/jekyll-TeXt-theme@latest # Use the latest version
+
+tex_theme: white # Start with the 'white' skin for a minimal base, others: default | forest | ocean | voilet | sky | simple
+
+locale: en # Set your language
+
+sidebar:
+  display: true # Or false if you want no sidebar initially
+  behavior: sticky # 'sticky' or 'overlay'. Sticky might feel more Notion-like.
+  # Remove unwanted widgets for minimalism
+  widgets:
+    - type: toc # Keep Table of Contents if you like it
+    # - type: about
+    # - type: categories
+    # - type: tags
+    # - type: links
+
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/ # You'll need to create an about.md page
+  # Add other essential links
+
+transition:
+  enabled: false
+  
+
+# --- Plugins ---
+plugins:
+  - jekyll-remote-theme
+  # List plugins from Gemfile that Jekyll needs to load
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-spaceship
+  - jekyll-feed
+  # Add others if needed
+
+# --- Pagination (Required by jekyll-paginate) ---
+paginate: 10         # Number of posts per page
+paginate_path: /page/:num/ # URL structure for paginated pages
+
+# --- Jekyll Spaceship (Configure desired features) ---
+# Refer to jekyll-spaceship docs, enable features selectively
+jekyll-spaceship:
+  # Example: enable table of contents generation
+  table-of-contents:
+    enabled: true
+    no_toc_section_class: no_toc_section
+    minimum_level: 2
+    maximum_level: 3
+    list_id: toc
+    list_class: nav_list
+    sublist_class: "" # Keep simple
+    item_class: nav_item
+    item_prefix: nav_
+
+  # Example: enable emoji support
+  emoji:
+    enabled: true
+
+  # Other spaceship options can be configured here...
+
+# --- Build Settings ---
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge # Standard highlighter
+
+# --- Exclude from Processing ---
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
