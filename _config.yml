@@ -15,7 +15,7 @@ description: >- # Your blog description
 url: "https://vijaik2k7.github.io" # Your main site URL
 
 # --- Theme Settings (TeXt Theme) ---
-remote_theme: kitian616/jekyll-TeXt-theme@latest # Use the latest version
+remote_theme: kitian616/jekyll-TeXt-theme@v2.2.6 # Use the latest version
 
 tex_theme: white # Start with the 'white' skin for a minimal base, others: default | forest | ocean | voilet | sky | simple
 
