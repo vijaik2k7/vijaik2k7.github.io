@@ -46,79 +46,79 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
             Data Scientist. Earthling passionate about data, AI, and crafting simple, high-utility personal tooling.
           </p>
 
-          {/* Social Links Row */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+          {/* Social Links Row (Icons Only) */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
             <a
               href="https://www.linkedin.com/in/vijai.rangan"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all ${
+              className={`p-2.5 rounded-xl border transition-all ${
                 isDark
-                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-sky-400 hover:text-sky-300'
-                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-sky-700 shadow-sm'
+                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-sky-400 hover:scale-105'
+                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-sky-700 shadow-sm hover:scale-105'
               }`}
-              title="LinkedIn Profile"
+              title="LinkedIn"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="w-4 h-4 text-sky-500" />
-              <span>LinkedIn</span>
+              <Linkedin className="w-5 h-5 text-sky-500" />
             </a>
 
             <a
               href="https://x.com/vijairangan"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all ${
+              className={`p-2.5 rounded-xl border transition-all ${
                 isDark
-                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-zinc-300 hover:text-white'
-                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-stone-800 shadow-sm'
+                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-zinc-300 hover:scale-105'
+                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-stone-800 shadow-sm hover:scale-105'
               }`}
-              title="X (Twitter) Profile"
+              title="X (@vijairangan)"
+              aria-label="X (@vijairangan)"
             >
-              <Twitter className="w-4 h-4 text-stone-400 dark:text-zinc-400" />
-              <span>X (@vijairangan)</span>
+              <Twitter className="w-5 h-5 text-stone-400 dark:text-zinc-300" />
             </a>
 
             <a
               href="https://www.instagram.com/vijaik2k7"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all ${
+              className={`p-2.5 rounded-xl border transition-all ${
                 isDark
-                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-pink-400 hover:text-pink-300'
-                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-pink-700 shadow-sm'
+                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-pink-400 hover:scale-105'
+                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-pink-700 shadow-sm hover:scale-105'
               }`}
-              title="Instagram Profile"
+              title="Instagram"
+              aria-label="Instagram"
             >
-              <Instagram className="w-4 h-4 text-pink-500" />
-              <span>Instagram</span>
+              <Instagram className="w-5 h-5 text-pink-500" />
             </a>
 
             <a
               href="https://github.com/vijaik2k7"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all ${
+              className={`p-2.5 rounded-xl border transition-all ${
                 isDark
-                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-zinc-300 hover:text-white'
-                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-stone-800 shadow-sm'
+                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-zinc-300 hover:scale-105'
+                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-stone-800 shadow-sm hover:scale-105'
               }`}
-              title="GitHub Profile"
+              title="GitHub"
+              aria-label="GitHub"
             >
-              <Github className="w-4 h-4 text-stone-400 dark:text-zinc-400" />
-              <span>GitHub</span>
+              <Github className="w-5 h-5 text-stone-400 dark:text-zinc-300" />
             </a>
 
             <a
               href="mailto:vijai.kasthurirangan@gmail.com"
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all ${
+              className={`p-2.5 rounded-xl border transition-all ${
                 isDark
-                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-emerald-400 hover:text-emerald-300'
-                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-emerald-800 shadow-sm'
+                  ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-emerald-400 hover:scale-105'
+                  : 'bg-[#e4ddd0] hover:bg-[#d8cebc] border-[#c8bca8] text-emerald-800 shadow-sm hover:scale-105'
               }`}
               title="Email"
+              aria-label="Email"
             >
-              <Mail className="w-4 h-4 text-emerald-500" />
-              <span>Email</span>
+              <Mail className="w-5 h-5 text-emerald-500" />
             </a>
           </div>
         </div>
