@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, Coffee } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 import { ThemeMode } from '../types';
 
 interface HeaderProps {
@@ -32,21 +32,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
 
       {/* Right Controls */}
       <div className="flex items-center gap-3">
-
-        {/* Buy Me a Coffee Button */}
-        <a
-          href="https://buymeacoffee.com/vijaik2k7"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`p-2 border rounded-lg transition-colors ${
-            isDark
-              ? 'bg-zinc-900 hover:bg-zinc-800 border-zinc-800 text-amber-400'
-              : 'bg-[#f4efe6] hover:bg-[#e4ddd0] border-[#d8cfbe] text-amber-700 shadow-sm'
-          }`}
-          title="Buy me a coffee"
-        >
-          <Coffee className="w-4 h-4 text-amber-500" />
-        </a>
 
         {/* Theme Toggle */}
         <button
