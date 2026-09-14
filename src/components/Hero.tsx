@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
           {/* Social Links Row (Icons Only) */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5">
             <a
-              href="https://www.linkedin.com/in/vijai.rangan"
+              href="https://www.linkedin.com/in/vijairangan"
               target="_blank"
               rel="noopener noreferrer"
               className={`p-2.5 rounded-xl border transition-all ${

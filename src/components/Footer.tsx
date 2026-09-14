@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ theme }) => {
 
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/vijai.rangan"
+          href="https://www.linkedin.com/in/vijairangan"
           target="_blank"
           rel="noopener noreferrer"
           className={`p-1.5 rounded-lg border transition-colors ${
