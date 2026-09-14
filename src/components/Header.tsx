@@ -21,11 +21,11 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
       {/* Left Branding */}
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-full overflow-hidden border border-[#FF5500]/50 shadow-md">
-          <img src="/profile.png" alt="Vijai Kasthuri Rangan" className="w-full h-full object-cover" />
+          <img src="./profile.png" alt="Vijai Rangan" className="w-full h-full object-cover" />
         </div>
         <div>
           <h1 className={`font-serif font-semibold text-lg tracking-tight ${isDark ? 'text-white' : 'text-stone-900'}`}>
-            Vijai Kasthuri Rangan
+            Vijai Rangan
           </h1>
         </div>
       </div>

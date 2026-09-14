@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coffee, Github, Mail, ShieldCheck } from 'lucide-react';
+import { Coffee, Github, Mail, ShieldCheck, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { ThemeMode } from '../types';
 
 interface FooterProps {
@@ -17,10 +17,10 @@ export const Footer: React.FC<FooterProps> = ({ theme }) => {
     >
       <div className="flex items-center gap-1.5 text-center sm:text-left">
         <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-        <span>Vijai Kasthuri Rangan • Built with React & Tailwind</span>
+        <span>Vijai Rangan • Built with React &amp; Tailwind</span>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         {/* Buy Me a Coffee Button */}
         <a
           href="https://buymeacoffee.com/vijaik2k7"
@@ -34,6 +34,45 @@ export const Footer: React.FC<FooterProps> = ({ theme }) => {
         >
           <Coffee className="w-3.5 h-3.5 text-amber-500" />
           <span>Buy me a coffee</span>
+        </a>
+
+        {/* LinkedIn */}
+        <a
+          href="https://www.linkedin.com/in/vijai.rangan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`p-1.5 rounded-lg border transition-colors ${
+            isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-sky-400' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-700 hover:text-sky-600'
+          }`}
+          title="LinkedIn Profile"
+        >
+          <Linkedin className="w-4 h-4" />
+        </a>
+
+        {/* X (Twitter) */}
+        <a
+          href="https://x.com/vijaik2k7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`p-1.5 rounded-lg border transition-colors ${
+            isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-white' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-700 hover:text-stone-900'
+          }`}
+          title="X (Twitter) Profile"
+        >
+          <Twitter className="w-4 h-4" />
+        </a>
+
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/vijaik2k7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`p-1.5 rounded-lg border transition-colors ${
+            isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-pink-400' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-700 hover:text-pink-600'
+          }`}
+          title="Instagram Profile"
+        >
+          <Instagram className="w-4 h-4" />
         </a>
 
         {/* GitHub */}

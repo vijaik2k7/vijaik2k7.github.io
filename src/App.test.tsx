@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('App Profile Component', () => {
-  it('renders Vijai Kasthuri Rangan heading', () => {
+  it('renders Vijai Rangan heading', () => {
     render(<App />);
-    expect(screen.getAllByText('Vijai Kasthuri Rangan').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Vijai Rangan').length).toBeGreaterThan(0);
   });
 });
