@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Sparkles, Heart, Coffee, Cpu, Database, Linkedin, Twitter, Instagram, Github, Mail } from 'lucide-react';
+import { MapPin, Sparkles, Linkedin, Twitter, Instagram, Github, Mail } from 'lucide-react';
 import { ThemeMode } from '../types';
 
 interface HeroProps {
@@ -43,11 +43,11 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
           <p className={`text-base sm:text-lg leading-relaxed mb-6 font-sans ${
             isDark ? 'text-zinc-300' : 'text-stone-700'
           }`}>
-            Data Scientist. Earthling passionate about data, AI, and crafting simple, zero-server high-utility web tools.
+            Data Scientist. Earthling passionate about data, AI, and crafting simple, high-utility personal tooling.
           </p>
 
           {/* Social Links Row */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
             <a
               href="https://www.linkedin.com/in/vijai.rangan"
               target="_blank"
@@ -120,33 +120,6 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
               <Mail className="w-4 h-4 text-emerald-500" />
               <span>Email</span>
             </a>
-          </div>
-
-          {/* Minimalist Interest Pills */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs font-mono">
-            <span className={`px-3 py-1.5 rounded-lg border flex items-center gap-1.5 ${
-              isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-300' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-800'
-            }`}>
-              <Heart className="w-3.5 h-3.5 text-rose-500" /> Family
-            </span>
-
-            <span className={`px-3 py-1.5 rounded-lg border flex items-center gap-1.5 ${
-              isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-300' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-800'
-            }`}>
-              <Database className="w-3.5 h-3.5 text-[#FF5500]" /> Data &amp; AI
-            </span>
-
-            <span className={`px-3 py-1.5 rounded-lg border flex items-center gap-1.5 ${
-              isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-300' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-800'
-            }`}>
-              <Cpu className="w-3.5 h-3.5 text-emerald-500" /> High-Utility Devices
-            </span>
-
-            <span className={`px-3 py-1.5 rounded-lg border flex items-center gap-1.5 ${
-              isDark ? 'bg-zinc-900 border-zinc-800 text-zinc-300' : 'bg-[#e4ddd0] border-[#c8bca8] text-stone-800'
-            }`}>
-              <Coffee className="w-3.5 h-3.5 text-amber-500" /> Coffee &lt;3
-            </span>
           </div>
         </div>
       </div>

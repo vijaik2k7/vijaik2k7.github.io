@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, Coffee, ShieldCheck } from 'lucide-react';
+import { Sun, Moon, Coffee } from 'lucide-react';
 import { ThemeMode } from '../types';
 
 interface HeaderProps {
@@ -32,14 +32,6 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
 
       {/* Right Controls */}
       <div className="flex items-center gap-3">
-        <div className={`hidden md:flex items-center gap-1.5 border text-xs px-2.5 py-1 rounded-full font-mono ${
-          isDark
-            ? 'bg-emerald-950/40 text-emerald-400 border-emerald-800/50'
-            : 'bg-emerald-100/70 text-emerald-800 border-emerald-300'
-        }`}>
-          <ShieldCheck className="w-3.5 h-3.5" />
-          <span>Client-Side Utilities</span>
-        </div>
 
         {/* Buy Me a Coffee Button */}
         <a
