@@ -6,7 +6,7 @@ import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
 
 export default function App() {
-  const [theme, setTheme] = useState<ThemeMode>('dark');
+  const [theme, setTheme] = useState<ThemeMode>('beige');
 
   const toggleTheme = () => {
     const nextTheme = theme === 'dark' ? 'beige' : 'dark';
