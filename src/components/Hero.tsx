@@ -64,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
             </a>
 
             <a
-              href="https://x.com/vijaik2k7"
+              href="https://x.com/vijairangan"
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all ${
@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
               title="X (Twitter) Profile"
             >
               <Twitter className="w-4 h-4 text-stone-400 dark:text-zinc-400" />
-              <span>X (@vijaik2k7)</span>
+              <span>X (@vijairangan)</span>
             </a>
 
             <a
