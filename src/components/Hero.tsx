@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
         <div className="flex-1 text-center md:text-left">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold mb-4 border bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20">
             <MapPin className="w-3.5 h-3.5" />
-            <span>Santa Clara, California</span>
+            <span>California, USA</span>
           </div>
 
           <h1 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 ${
@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
           <p className={`text-base sm:text-lg leading-relaxed mb-6 font-sans ${
             isDark ? 'text-zinc-300' : 'text-stone-700'
           }`}>
-            Staff Data Scientist @ Google. Earthling passionate about data, AI, and crafting simple, zero-server high-utility web tools.
+            Data Scientist. Earthling passionate about data, AI, and crafting simple, zero-server high-utility web tools.
           </p>
 
           {/* Social Links Row */}
