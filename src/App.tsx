@@ -1,9 +1,22 @@
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { ThemeMode } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { WeekendReadings } from './components/WeekendReadings';
 import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
+import { ReadingPage } from './components/ReadingPage';
+
+function HomePage({ theme }: { theme: ThemeMode }) {
+  return (
+    <>
+      <Hero theme={theme} />
+      <WeekendReadings theme={theme} />
+      <Projects theme={theme} />
+    </>
+  );
+}
 
 export default function App() {
   const [theme, setTheme] = useState<ThemeMode>('beige');
@@ -29,8 +42,10 @@ export default function App() {
       <Header theme={theme} onToggleTheme={toggleTheme} />
 
       <main className="flex-1">
-        <Hero theme={theme} />
-        <Projects theme={theme} />
+        <Routes>
+          <Route path="/" element={<HomePage theme={theme} />} />
+          <Route path="/reading/:id" element={<ReadingPage theme={theme} />} />
+        </Routes>
       </main>
 
       <Footer theme={theme} />
