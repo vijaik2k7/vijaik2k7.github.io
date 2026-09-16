@@ -1,0 +1,82 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --bg-app: #FAF9F6;
+    --bg-card: #F3F0E9;
+    --bg-muted: #E8E4DA;
+    --text-primary: #1F1E1B;
+    --text-secondary: #706E6B;
+    --accent-terracotta: #D97757;
+    --accent-sand: #C4A482;
+    --border-subtle: #E6E2D8;
+  }
+
+  .dark {
+    --bg-app: #141413;
+    --bg-card: #1E1E1C;
+    --bg-muted: #282825;
+    --text-primary: #EDECE8;
+    --text-secondary: #A09E9A;
+    --accent-terracotta: #E07A5F;
+    --accent-sand: #8C7762;
+    --border-subtle: #2A2A27;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  /* Focus styling with terracotta accent */
+  *:focus {
+    outline: none !important;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--accent-terracotta) !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* Custom timer animations */
+@keyframes timer-pulse {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(217, 119, 87, 0.4);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 16px rgba(217, 119, 87, 0);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(217, 119, 87, 0);
+  }
+}
+
+.animate-timer-pulse {
+  animation: timer-pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-muted);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-sand);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
+}

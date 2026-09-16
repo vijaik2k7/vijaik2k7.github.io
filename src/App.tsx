@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeMode } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -7,6 +7,7 @@ import { WeekendReadings } from './components/WeekendReadings';
 import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
 import { ReadingPage } from './components/ReadingPage';
+import { KineticRoutinePage } from './components/KineticRoutinePage';
 
 function HomePage({ theme }: { theme: ThemeMode }) {
   return (
@@ -20,6 +21,7 @@ function HomePage({ theme }: { theme: ThemeMode }) {
 
 export default function App() {
   const [theme, setTheme] = useState<ThemeMode>('beige');
+  const location = useLocation();
 
   const toggleTheme = () => {
     const nextTheme = theme === 'dark' ? 'beige' : 'dark';
@@ -32,6 +34,11 @@ export default function App() {
   };
 
   const isDark = theme === 'dark';
+  const isKineticApp = location.pathname.startsWith('/kinetic-routine');
+
+  if (isKineticApp) {
+    return <KineticRoutinePage />;
+  }
 
   return (
     <div
@@ -45,6 +52,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage theme={theme} />} />
           <Route path="/reading/:id" element={<ReadingPage theme={theme} />} />
+          <Route path="/kinetic-routine/*" element={<KineticRoutinePage />} />
         </Routes>
       </main>
 
@@ -52,3 +60,4 @@ export default function App() {
     </div>
   );
 }
+
