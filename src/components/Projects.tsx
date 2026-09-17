@@ -27,10 +27,10 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
       name: 'Kinetic Routine',
       badge: 'Fitness Utility',
       category: 'web',
-      description: 'Twice-weekly full-body compound exercise companion. Features animated form visuals, auto-rolling interval rest timers, 3-phase progression, and RPE tracking in Anthropic beige theme.',
+      description: 'Twice-weekly full-body compound exercise companion. Features animated form visuals, auto-rolling interval rest timers, 3-phase progression, and RPE tracking.',
       url: 'https://vijaik2k7.github.io/kinetic-routine/',
       githubUrl: 'https://github.com/vijaik2k7/kinetic-routine',
-      tags: ['Day A/B Split', '3-Phase Overload', 'Auto-Roll Timer', 'Terracotta Theme'],
+      tags: ['Day A/B Split', '3-Phase Overload', 'Auto-Roll Timer'],
       icon: 'dumbbell',
     },
     {
@@ -41,7 +41,7 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
       description: '100% browser-based audio extractor and dead air silence trimmer. Strip silent pauses, crop waveforms, and export MP3/WAV with zero server uploads.',
       url: 'https://vijaik2k7.github.io/hushcut/',
       githubUrl: 'https://github.com/vijaik2k7/hushcut',
-      tags: ['Web Audio API', 'Waveform Visualizer', '0 Server Uploads'],
+      tags: ['Web Audio API', 'Waveform Visualizer', 'Client-Side'],
       icon: 'scissors',
     },
     {
@@ -52,7 +52,7 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
       description: 'Sample-accurate online metronome app powered by Web Audio API lookahead scheduling. Features tap tempo, custom beat accents, and Italian tempo terms.',
       url: 'https://vijaik2k7.github.io/pulse-metronome/',
       githubUrl: 'https://github.com/vijaik2k7/pulse-metronome',
-      tags: ['Lookahead Scheduler', 'Tap Tempo', 'Beige/Dark Mode'],
+      tags: ['Lookahead Scheduler', 'Tap Tempo', 'Sub-ms Timing'],
       icon: 'activity',
     },
     {
@@ -60,10 +60,10 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
       name: 'PDFRedact',
       badge: 'Privacy Utility',
       category: 'web',
-      description: 'Zero-server PDF redactor & anonymizer. Draw black redaction boxes, auto-detect SSNs & emails, and export flattened, non-extractable PDFs.',
+      description: 'Zero-server PDF redactor & anonymizer. Draw black redaction boxes, auto-detect sensitive patterns (SSNs, emails), and export flattened, non-extractable PDFs.',
       url: 'https://vijaik2k7.github.io/pdf-redactor/',
       githubUrl: 'https://github.com/vijaik2k7/pdf-redactor',
-      tags: ['pdf-lib', 'Pattern Auto-Detect', '100% Confidential'],
+      tags: ['pdf-lib', 'Pattern Auto-Detect', 'Private'],
       icon: 'lock',
     },
     {
@@ -93,46 +93,51 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
     : projects.filter((p) => p.category === activeCategory);
 
   const renderIcon = (iconName: string) => {
+    const iconClass = isDark ? 'text-[#D97757]' : 'text-[#FF5500]';
     switch (iconName) {
       case 'scan':
-        return <ScanLine className="w-5 h-5 text-[#FF5500]" />;
+        return <ScanLine className={`w-5 h-5 ${iconClass}`} />;
       case 'dumbbell':
-        return <Dumbbell className="w-5 h-5 text-[#D97757]" />;
+        return <Dumbbell className={`w-5 h-5 ${iconClass}`} />;
       case 'scissors':
-        return <Scissors className="w-5 h-5 text-[#FF5500]" />;
+        return <Scissors className={`w-5 h-5 ${iconClass}`} />;
       case 'activity':
-        return <Activity className="w-5 h-5 text-[#D97757]" />;
+        return <Activity className={`w-5 h-5 ${iconClass}`} />;
       case 'lock':
-        return <Lock className="w-5 h-5 text-emerald-500" />;
+        return <Lock className={`w-5 h-5 ${iconClass}`} />;
       case 'cpu':
-        return <Cpu className="w-5 h-5 text-[#FF5500]" />;
+        return <Cpu className={`w-5 h-5 ${iconClass}`} />;
       case 'wrench':
-        return <Wrench className="w-5 h-5 text-amber-500" />;
+        return <Wrench className={`w-5 h-5 ${iconClass}`} />;
       default:
         return null;
     }
   };
 
   return (
-    <section className="py-12 px-4 sm:px-8 max-w-4xl mx-auto border-t border-zinc-800/40">
+    <section className={`py-12 px-4 sm:px-8 max-w-4xl mx-auto border-t ${
+      isDark ? 'border-zinc-800/60' : 'border-[#d8cfbe]'
+    }`}>
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
-          <h2 className={`text-2xl font-serif font-bold tracking-tight ${isDark ? 'text-white' : 'text-stone-900'}`}>
-            Hobby Utilities &amp; Functional Builds
+          <h2 className={`text-2xl sm:text-3xl font-serif font-bold tracking-tight ${isDark ? 'text-white' : 'text-stone-900'}`}>
+            Hobby Utilities &amp; Builds
           </h2>
-          <p className={`text-xs font-mono mt-1 ${isDark ? 'text-zinc-400' : 'text-stone-600'}`}>
-            Zero-server browser tools &amp; physical hardware gadgets built for personal productivity.
+          <p className={`text-xs sm:text-sm font-mono mt-1 ${isDark ? 'text-zinc-400' : 'text-stone-600'}`}>
+            Browser utilities and physical hardware projects built for daily productivity.
           </p>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl border text-xs font-mono self-start sm:self-auto shrink-0 border-zinc-800/50 bg-zinc-900/30">
+        {/* Category Filters (Theme-aware contrast fix) */}
+        <div className={`flex items-center gap-1.5 p-1 rounded-xl border text-xs font-mono self-start sm:self-auto shrink-0 ${
+          isDark ? 'bg-zinc-900/60 border-zinc-800' : 'bg-[#e4ddd0] border-[#c8bca8]'
+        }`}>
           <button
             onClick={() => setActiveCategory('all')}
             className={`px-3 py-1 rounded-lg transition-all ${
               activeCategory === 'all'
-                ? 'bg-[#FF5500] text-white font-bold'
+                ? 'bg-[#FF5500] text-white font-semibold'
                 : isDark ? 'text-zinc-400 hover:text-white' : 'text-stone-700 hover:text-stone-900'
             }`}
           >
@@ -142,7 +147,7 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
             onClick={() => setActiveCategory('web')}
             className={`px-3 py-1 rounded-lg transition-all ${
               activeCategory === 'web'
-                ? 'bg-[#FF5500] text-white font-bold'
+                ? 'bg-[#FF5500] text-white font-semibold'
                 : isDark ? 'text-zinc-400 hover:text-white' : 'text-stone-700 hover:text-stone-900'
             }`}
           >
@@ -152,29 +157,29 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
             onClick={() => setActiveCategory('physical')}
             className={`px-3 py-1 rounded-lg transition-all ${
               activeCategory === 'physical'
-                ? 'bg-[#FF5500] text-white font-bold'
+                ? 'bg-[#FF5500] text-white font-semibold'
                 : isDark ? 'text-zinc-400 hover:text-white' : 'text-stone-700 hover:text-stone-900'
             }`}
           >
-            Physical Gadgets
+            Hardware
           </button>
         </div>
       </div>
 
       {/* Grid of Projects */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((proj) => (
           <div
             key={proj.id}
             className={`border rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 group hover:-translate-y-1 ${
               isDark
-                ? 'bg-[#121215] hover:bg-[#18181c] border-zinc-800 hover:border-[#FF5500]/60'
+                ? 'bg-[#121215] hover:bg-[#18181c] border-zinc-800 hover:border-[#FF5500]/50'
                 : 'bg-[#f5f0e6] hover:bg-[#eae3d5] border-[#d8cfbe] hover:border-[#FF5500] shadow-sm'
             }`}
           >
             <div>
               <div className="flex items-center justify-between mb-3">
-                <div className="w-9 h-9 rounded-xl bg-black/10 dark:bg-white/5 flex items-center justify-center border border-zinc-700/30">
+                <div className="w-9 h-9 rounded-xl bg-black/5 dark:bg-white/5 flex items-center justify-center border border-zinc-700/20">
                   {renderIcon(proj.icon)}
                 </div>
                 <span className={`text-[10px] uppercase font-mono font-semibold px-2 py-0.5 rounded-full border ${
@@ -184,7 +189,7 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
                 </span>
               </div>
 
-              <h3 className={`font-mono font-bold text-lg mb-2 group-hover:text-[#FF5500] transition-colors ${
+              <h3 className={`font-mono font-bold text-base mb-2 group-hover:text-[#FF5500] transition-colors ${
                 isDark ? 'text-white' : 'text-stone-900'
               }`}>
                 {proj.name}
@@ -209,13 +214,15 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-3 border-t border-zinc-800/40">
+              <div className={`flex items-center justify-between pt-3 border-t ${
+                isDark ? 'border-zinc-800/60' : 'border-[#d8cfbe]'
+              }`}>
                 {proj.url ? (
                   <a
                     href={proj.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#FF5500] hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-[#FF5500] hover:underline"
                   >
                     <span>Launch App</span>
                     <ExternalLink className="w-3.5 h-3.5" />

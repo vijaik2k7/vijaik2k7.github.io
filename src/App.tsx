@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeMode } from './types';
 import { Header } from './components/Header';
@@ -21,17 +21,24 @@ function HomePage({ theme }: { theme: ThemeMode }) {
 }
 
 export default function App() {
-  const [theme, setTheme] = useState<ThemeMode>('beige');
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    const saved = localStorage.getItem('vijai-portfolio-theme');
+    return (saved === 'dark' ? 'dark' : 'beige') as ThemeMode;
+  });
+
   const location = useLocation();
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'beige' : 'dark';
-    setTheme(nextTheme);
-    if (nextTheme === 'dark') {
+  useEffect(() => {
+    localStorage.setItem('vijai-portfolio-theme', theme);
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'beige' : 'dark'));
   };
 
   const isDark = theme === 'dark';
@@ -62,5 +69,3 @@ export default function App() {
     </div>
   );
 }
-
-
