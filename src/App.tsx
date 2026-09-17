@@ -8,6 +8,7 @@ import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
 import { ReadingPage } from './components/ReadingPage';
 import { KineticRoutinePage } from './components/KineticRoutinePage';
+import { FoodAnalyzerPage } from './food-analyzer/FoodAnalyzerPage';
 
 function HomePage({ theme }: { theme: ThemeMode }) {
   return (
@@ -52,6 +53,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage theme={theme} />} />
           <Route path="/reading/:id" element={<ReadingPage theme={theme} />} />
+          <Route path="/food-analyzer" element={<FoodAnalyzerPage theme={theme} />} />
           <Route path="/kinetic-routine/*" element={<KineticRoutinePage />} />
         </Routes>
       </main>
@@ -60,4 +62,5 @@ export default function App() {
     </div>
   );
 }
+
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Scissors, Activity, Lock, Cpu, Wrench, Dumbbell } from 'lucide-react';
+import { ExternalLink, Github, Scissors, Activity, Lock, Cpu, Wrench, Dumbbell, ScanLine } from 'lucide-react';
 import { ThemeMode, ProjectItem } from '../types';
 
 interface ProjectsProps {
@@ -11,6 +11,17 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
   const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'physical'>('all');
 
   const projects: ProjectItem[] = [
+    {
+      id: 'food-analyzer',
+      name: 'NutriSnap AI',
+      badge: 'Health Utility',
+      category: 'web',
+      description: 'Snap a camera photo of any food product or ingredients list to receive instant AI nutritional breakdown, health grade (A-F), and key pros/cons via Gemini 3.8 Flash.',
+      url: '/#/food-analyzer',
+      githubUrl: 'https://github.com/vijaik2k7/vijaik2k7.github.io/tree/main/src/food-analyzer',
+      tags: ['Gemini 3.8 Flash', 'Vision AI', 'Zero Server', 'Nutritional Grade'],
+      icon: 'scan',
+    },
     {
       id: 'kinetic-routine',
       name: 'Kinetic Routine',
@@ -83,6 +94,8 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
 
   const renderIcon = (iconName: string) => {
     switch (iconName) {
+      case 'scan':
+        return <ScanLine className="w-5 h-5 text-[#FF5500]" />;
       case 'dumbbell':
         return <Dumbbell className="w-5 h-5 text-[#D97757]" />;
       case 'scissors':
