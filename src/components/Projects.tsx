@@ -13,13 +13,13 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
   const projects: ProjectItem[] = [
     {
       id: 'food-analyzer',
-      name: 'NutriSnap AI',
+      name: 'Food Analyzer',
       badge: 'Health Utility',
       category: 'web',
-      description: 'Snap a camera photo of any food product or ingredients list to receive instant AI nutritional breakdown, health grade (A-F), and key pros/cons via Gemini 3.8 Flash.',
+      description: 'Photograph or describe any food product to get an instant AI health grade (A–F), nutritional pros, and concerns. Powered by Gemini 3.8 Flash, runs entirely in your browser.',
       url: 'https://vijaik2k7.github.io/food-analyzer/',
       githubUrl: 'https://github.com/vijaik2k7/food-analyzer',
-      tags: ['Gemini 3.8 Flash', 'Vision AI', 'Zero Server', 'Nutritional Grade'],
+      tags: ['Gemini Vision', 'Health Grade', 'Client-Side', 'Camera API'],
       icon: 'scan',
     },
     {
