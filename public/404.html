@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      const pathname = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      // Redirect /food-analyzer to /#/food-analyzer
+      window.location.replace(window.location.origin + '/#' + pathname + search + hash);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
