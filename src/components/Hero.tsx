@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
           <p className={`text-base sm:text-lg leading-relaxed mb-6 font-sans ${
             isDark ? 'text-zinc-300' : 'text-stone-700'
           }`}>
-            Data Scientist &amp; AI Systems Developer. Focused on machine learning architecture, zero-server personal tooling, and physical hardware builds.
+            Data Scientist. Focused on AI research, machine learning systems, and building simple, high-utility tools — spanning software and physical hardware.
           </p>
 
           {/* Social Links Row */}
