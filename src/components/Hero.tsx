@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
           <p className={`text-base sm:text-lg leading-relaxed mb-6 font-sans ${
             isDark ? 'text-zinc-300' : 'text-stone-700'
           }`}>
-            Data Scientist. Focused on AI research, machine learning systems, and building simple, high-utility tools — spanning software and physical hardware.
+            Data Scientist working on machine learning and building small web utilities.
           </p>
 
           {/* Social Links Row */}

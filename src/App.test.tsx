@@ -1,20 +1,24 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
-describe('App Profile & Reading Hub Component', () => {
+describe('App Profile Component', () => {
   it('renders Vijai Rangan heading', () => {
-    render(<App />);
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
     expect(screen.getAllByText('Vijai Rangan').length).toBeGreaterThan(0);
   });
 
-  it('renders Weekend Readings section', () => {
-    render(<App />);
-    expect(screen.getByText('Weekend Readings & Notes')).toBeTruthy();
-  });
-
-  it('renders Hobby Utilities section', () => {
-    render(<App />);
-    expect(screen.getByText('Hobby Utilities & Functional Builds')).toBeTruthy();
+  it('renders Web Utilities section', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getAllByText('Web Utilities').length).toBeGreaterThan(0);
   });
 });

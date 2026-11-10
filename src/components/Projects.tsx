@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ExternalLink, Github, Scissors, Activity, Lock, Cpu, Wrench, Dumbbell, ScanLine } from 'lucide-react';
+import React from 'react';
+import { ExternalLink, Github, Scissors, Activity, Lock, Dumbbell, ScanLine } from 'lucide-react';
 import { ThemeMode, ProjectItem } from '../types';
 
 interface ProjectsProps {
@@ -8,89 +8,64 @@ interface ProjectsProps {
 
 export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
   const isDark = theme === 'dark';
-  const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'physical'>('all');
 
   const projects: ProjectItem[] = [
     {
       id: 'food-analyzer',
       name: 'Food Analyzer',
-      badge: 'Health Utility',
+      badge: 'Nutrition',
       category: 'web',
-      description: 'Photograph or describe any food product to get an instant AI health grade (A–F), nutritional pros, and concerns. Powered by Gemini 3.8 Flash, runs entirely in your browser.',
+      description: 'Take a photo or enter ingredients of a food product to get a nutrition grade (A–F) and ingredient breakdown.',
       url: 'https://vijaik2k7.github.io/food-analyzer/',
       githubUrl: 'https://github.com/vijaik2k7/food-analyzer',
-      tags: ['Gemini Vision', 'Health Grade', 'Client-Side', 'Camera API'],
+      tags: ['Gemini API', 'Camera API', 'Browser'],
       icon: 'scan',
     },
     {
       id: 'kinetic-routine',
       name: 'Kinetic Routine',
-      badge: 'Fitness Utility',
+      badge: 'Fitness',
       category: 'web',
-      description: 'Twice-weekly full-body compound exercise companion. Features animated form visuals, auto-rolling interval rest timers, 3-phase progression, and RPE tracking.',
+      description: 'Twice-weekly full-body workout tracker with form guides, interval rest timers, 3-phase progression, and set logging.',
       url: 'https://vijaik2k7.github.io/kinetic-routine/',
       githubUrl: 'https://github.com/vijaik2k7/kinetic-routine',
-      tags: ['Day A/B Split', '3-Phase Overload', 'Auto-Roll Timer'],
+      tags: ['Day A/B Split', 'Rest Timer', 'Workout Log'],
       icon: 'dumbbell',
     },
     {
       id: 'hushcut',
       name: 'HushCut',
-      badge: 'Audio Utility',
+      badge: 'Audio',
       category: 'web',
-      description: '100% browser-based audio extractor and dead air silence trimmer. Strip silent pauses, crop waveforms, and export MP3/WAV with zero server uploads.',
+      description: 'Trim silent pauses and crop audio files in the browser. Exports MP3 or WAV locally without uploading files.',
       url: 'https://vijaik2k7.github.io/hushcut/',
       githubUrl: 'https://github.com/vijaik2k7/hushcut',
-      tags: ['Web Audio API', 'Waveform Visualizer', 'Client-Side'],
+      tags: ['Web Audio API', 'MP3 / WAV', 'Browser'],
       icon: 'scissors',
     },
     {
       id: 'pulse-metronome',
       name: 'Pulse Metronome',
-      badge: 'Music Utility',
+      badge: 'Music',
       category: 'web',
-      description: 'Sample-accurate online metronome app powered by Web Audio API lookahead scheduling. Features tap tempo, custom beat accents, and Italian tempo terms.',
+      description: 'Web metronome with tap tempo, custom beat accents, time signatures, and standard tempo markings.',
       url: 'https://vijaik2k7.github.io/pulse-metronome/',
       githubUrl: 'https://github.com/vijaik2k7/pulse-metronome',
-      tags: ['Lookahead Scheduler', 'Tap Tempo', 'Sub-ms Timing'],
+      tags: ['Web Audio API', 'Tap Tempo', 'Time Signatures'],
       icon: 'activity',
     },
     {
       id: 'pdf-redactor',
       name: 'PDFRedact',
-      badge: 'Privacy Utility',
+      badge: 'PDF',
       category: 'web',
-      description: 'Zero-server PDF redactor & anonymizer. Draw black redaction boxes, auto-detect sensitive patterns (SSNs, emails), and export flattened, non-extractable PDFs.',
+      description: 'Draw redaction boxes or match patterns (emails, SSNs) to black out text and export flattened PDF files in the browser.',
       url: 'https://vijaik2k7.github.io/pdf-redactor/',
       githubUrl: 'https://github.com/vijaik2k7/pdf-redactor',
-      tags: ['pdf-lib', 'Pattern Auto-Detect', 'Private'],
+      tags: ['pdf-lib', 'Pattern Match', 'Browser'],
       icon: 'lock',
     },
-    {
-      id: 'esp32-telemetry-pod',
-      name: 'ESP32 Micro-Desk Telemetry',
-      badge: 'Hardware Build',
-      category: 'physical',
-      description: 'Custom ESP32 micro-display streaming real-time local environment metrics, system load telemetry, and coffee brew timers over BLE/Wi-Fi.',
-      tags: ['ESP32', 'FreeRTOS', '3D Printed Shell', 'BLE'],
-      icon: 'cpu',
-      status: 'Workbench Build',
-    },
-    {
-      id: 'custom-macro-pad',
-      name: 'Ergonomic Dial & Macro Dock',
-      badge: 'Physical Utility',
-      category: 'physical',
-      description: 'Hand-wired 6-key mechanical macro keypad with rotary encoder dial for instant audio track trimming and workspace focus toggling.',
-      tags: ['QMK / Vial', 'Rotary Encoder', 'Custom PCB', 'CAD'],
-      icon: 'wrench',
-      status: 'Workbench Build',
-    },
   ];
-
-  const filteredProjects = activeCategory === 'all'
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
 
   const renderIcon = (iconName: string) => {
     const iconClass = isDark ? 'text-[#D97757]' : 'text-[#FF5500]';
@@ -105,70 +80,31 @@ export const Projects: React.FC<ProjectsProps> = ({ theme }) => {
         return <Activity className={`w-5 h-5 ${iconClass}`} />;
       case 'lock':
         return <Lock className={`w-5 h-5 ${iconClass}`} />;
-      case 'cpu':
-        return <Cpu className={`w-5 h-5 ${iconClass}`} />;
-      case 'wrench':
-        return <Wrench className={`w-5 h-5 ${iconClass}`} />;
       default:
         return null;
     }
   };
 
   return (
-    <section className={`py-12 px-4 sm:px-8 max-w-4xl mx-auto border-t ${
-      isDark ? 'border-zinc-800/60' : 'border-[#d8cfbe]'
-    }`}>
+    <section
+      id="projects"
+      className={`py-12 px-4 sm:px-8 max-w-4xl mx-auto border-t ${
+        isDark ? 'border-zinc-800/60' : 'border-[#d8cfbe]'
+      }`}
+    >
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-        <div>
-          <h2 className={`text-2xl sm:text-3xl font-serif font-bold tracking-tight ${isDark ? 'text-white' : 'text-stone-900'}`}>
-            Hobby Utilities &amp; Builds
-          </h2>
-          <p className={`text-xs sm:text-sm font-mono mt-1 ${isDark ? 'text-zinc-400' : 'text-stone-600'}`}>
-            Browser utilities and physical hardware projects built for daily productivity.
-          </p>
-        </div>
-
-        {/* Category Filters (Theme-aware contrast fix) */}
-        <div className={`flex items-center gap-1.5 p-1 rounded-xl border text-xs font-mono self-start sm:self-auto shrink-0 ${
-          isDark ? 'bg-zinc-900/60 border-zinc-800' : 'bg-[#e4ddd0] border-[#c8bca8]'
-        }`}>
-          <button
-            onClick={() => setActiveCategory('all')}
-            className={`px-3 py-1 rounded-lg transition-all ${
-              activeCategory === 'all'
-                ? 'bg-[#FF5500] text-white font-semibold'
-                : isDark ? 'text-zinc-400 hover:text-white' : 'text-stone-700 hover:text-stone-900'
-            }`}
-          >
-            All Builds
-          </button>
-          <button
-            onClick={() => setActiveCategory('web')}
-            className={`px-3 py-1 rounded-lg transition-all ${
-              activeCategory === 'web'
-                ? 'bg-[#FF5500] text-white font-semibold'
-                : isDark ? 'text-zinc-400 hover:text-white' : 'text-stone-700 hover:text-stone-900'
-            }`}
-          >
-            Web Apps
-          </button>
-          <button
-            onClick={() => setActiveCategory('physical')}
-            className={`px-3 py-1 rounded-lg transition-all ${
-              activeCategory === 'physical'
-                ? 'bg-[#FF5500] text-white font-semibold'
-                : isDark ? 'text-zinc-400 hover:text-white' : 'text-stone-700 hover:text-stone-900'
-            }`}
-          >
-            Hardware
-          </button>
-        </div>
+      <div className="mb-8">
+        <h2 className={`text-2xl sm:text-3xl font-serif font-bold tracking-tight ${isDark ? 'text-white' : 'text-stone-900'}`}>
+          Web Utilities
+        </h2>
+        <p className={`text-xs sm:text-sm font-mono mt-1 ${isDark ? 'text-zinc-400' : 'text-stone-600'}`}>
+          Browser tools that run locally on your device.
+        </p>
       </div>
 
       {/* Grid of Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((proj) => (
+        {projects.map((proj) => (
           <div
             key={proj.id}
             className={`border rounded-2xl p-5 flex flex-col justify-between transition-all duration-200 group hover:-translate-y-1 ${

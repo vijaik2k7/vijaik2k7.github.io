@@ -15,9 +15,9 @@ export default {
       },
       colors: {
         brand: {
-          orange: '#FF5500',
-          orangeHover: '#E04B00',
-          terracotta: '#D97757',
+          orange: '#EA832B',
+          orangeHover: '#D6721C',
+          terracotta: '#EA832B',
         }
       }
     },

@@ -279,7 +279,7 @@ export const FoodAnalyzerPage: React.FC<FoodAnalyzerPageProps> = ({ theme }) => 
         </Link>
 
         <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full border border-[#FF5500]/40 bg-[#FF5500]/10 text-[#FF5500] font-bold">
-          Gemini 3.8 Flash • Zero Server
+          Gemini API • Browser Only
         </span>
       </div>
 
@@ -291,10 +291,10 @@ export const FoodAnalyzerPage: React.FC<FoodAnalyzerPageProps> = ({ theme }) => 
           </div>
           <div>
             <h1 className={`text-2xl sm:text-3xl font-serif font-bold tracking-tight ${isDark ? 'text-white' : 'text-stone-900'}`}>
-              NutriSnap AI Food Scanner
+              Food Analyzer
             </h1>
             <p className={`text-xs sm:text-sm font-mono mt-0.5 ${isDark ? 'text-zinc-400' : 'text-stone-600'}`}>
-              Instant AI health analysis of food products, ingredients &amp; snacks using vision intelligence.
+              Check ingredients and nutrition grades (A–F) from a photo or product description.
             </p>
           </div>
         </div>

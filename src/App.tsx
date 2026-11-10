@@ -3,10 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeMode } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { WeekendReadings } from './components/WeekendReadings';
 import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
-import { ReadingPage } from './components/ReadingPage';
 import { KineticRoutinePage } from './components/KineticRoutinePage';
 import { FoodAnalyzerPage } from './food-analyzer/FoodAnalyzerPage';
 
@@ -14,7 +12,6 @@ function HomePage({ theme }: { theme: ThemeMode }) {
   return (
     <>
       <Hero theme={theme} />
-      <WeekendReadings theme={theme} />
       <Projects theme={theme} />
     </>
   );
@@ -22,14 +19,24 @@ function HomePage({ theme }: { theme: ThemeMode }) {
 
 export default function App() {
   const [theme, setTheme] = useState<ThemeMode>(() => {
-    const saved = localStorage.getItem('vijai-portfolio-theme');
-    return (saved === 'dark' ? 'dark' : 'beige') as ThemeMode;
+    try {
+      const saved = typeof localStorage?.getItem === 'function' ? localStorage.getItem('vijai-portfolio-theme') : null;
+      return (saved === 'dark' ? 'dark' : 'beige') as ThemeMode;
+    } catch {
+      return 'beige';
+    }
   });
 
   const location = useLocation();
 
   useEffect(() => {
-    localStorage.setItem('vijai-portfolio-theme', theme);
+    try {
+      if (typeof localStorage?.setItem === 'function') {
+        localStorage.setItem('vijai-portfolio-theme', theme);
+      }
+    } catch {
+      // Ignore storage errors
+    }
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -59,7 +66,6 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage theme={theme} />} />
-          <Route path="/reading/:id" element={<ReadingPage theme={theme} />} />
           <Route path="/food-analyzer" element={<FoodAnalyzerPage theme={theme} />} />
           <Route path="/kinetic-routine/*" element={<KineticRoutinePage />} />
         </Routes>

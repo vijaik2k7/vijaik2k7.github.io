@@ -252,7 +252,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-[#E6E2D8] dark:border-[#2A2A27] py-6 text-center text-xs text-[#706E6B] dark:text-[#A09E9A] font-mono">
-        Kinetic Routine — Anthropic Beige & Burnt Orange Aesthetic Utility
+        Kinetic Routine
       </footer>
 
       {/* Interval Timer Modal */}
