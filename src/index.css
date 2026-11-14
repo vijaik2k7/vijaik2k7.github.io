@@ -79,6 +79,29 @@
   opacity: 0.9;
 }
 
+/* Long-form article */
+.markdown-content.article p {
+  line-height: 1.8;
+}
+
+.markdown-content.article h2 {
+  margin-top: 0.5rem;
+}
+
+.markdown-content hr {
+  border: 0;
+  height: 1px;
+  margin: 2.5rem auto;
+  width: 4rem;
+  background-color: #EA832B;
+  opacity: 0.5;
+}
+
+.markdown-content sup {
+  font-size: 0.7em;
+  line-height: 0;
+}
+
 /* Page Transition Animation */
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(8px); }

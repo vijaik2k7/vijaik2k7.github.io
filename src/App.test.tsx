@@ -21,4 +21,24 @@ describe('App Profile Component', () => {
     );
     expect(screen.getAllByText('Web Utilities').length).toBeGreaterThan(0);
   });
+
+  it('renders Writing section with the essay', () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getAllByText('Writing').length).toBeGreaterThan(0);
+    expect(screen.getByText(/The Thermodynamic Imperative/)).toBeTruthy();
+  });
+
+  it('renders the essay page', () => {
+    render(
+      <MemoryRouter initialEntries={['/writing/thermodynamic-imperative']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByRole('heading', { level: 1, name: /The Thermodynamic Imperative/ })).toBeTruthy();
+    expect(screen.getByText(/most accomplished instruments/)).toBeTruthy();
+  });
 });

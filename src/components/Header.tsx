@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sun, Moon, Menu, X, Wrench, Home } from 'lucide-react';
+import { Sun, Moon, Menu, X, Wrench, Home, PenLine } from 'lucide-react';
 import { ThemeMode } from '../types';
 
 interface HeaderProps {
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
               : 'bg-[#eee8dd] border-[#d8cfbe] text-stone-800'
           }`}
         >
-          <div className="max-w-4xl mx-auto px-4 py-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="max-w-4xl mx-auto px-4 py-4 sm:px-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Link
               to="/"
               onClick={() => setIsMenuOpen(false)}
@@ -171,6 +171,18 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
             >
               <Wrench className="w-4 h-4 text-[#FF5500]" />
               <span>Web Utilities</span>
+            </button>
+
+            <button
+              onClick={() => scrollToSection('writing')}
+              className={`p-3 rounded-xl border font-mono text-xs font-semibold flex items-center gap-2.5 transition-all text-left ${
+                isDark
+                  ? 'bg-zinc-900/60 border-zinc-800 hover:border-[#FF5500] hover:text-white'
+                  : 'bg-[#f4efe6] border-[#d8cfbe] hover:border-[#FF5500] hover:bg-[#e8e1d3]'
+              }`}
+            >
+              <PenLine className="w-4 h-4 text-[#FF5500]" />
+              <span>Writing</span>
             </button>
           </div>
         </div>

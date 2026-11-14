@@ -4,6 +4,8 @@ import { ThemeMode } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
+import { Writing } from './components/Writing';
+import { PostPage } from './components/PostPage';
 import { Footer } from './components/Footer';
 import { KineticRoutinePage } from './components/KineticRoutinePage';
 import { FoodAnalyzerPage } from './food-analyzer/FoodAnalyzerPage';
@@ -13,6 +15,7 @@ function HomePage({ theme }: { theme: ThemeMode }) {
     <>
       <Hero theme={theme} />
       <Projects theme={theme} />
+      <Writing theme={theme} />
     </>
   );
 }
@@ -67,6 +70,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage theme={theme} />} />
           <Route path="/food-analyzer" element={<FoodAnalyzerPage theme={theme} />} />
+          <Route path="/writing/:slug" element={<PostPage theme={theme} />} />
           <Route path="/kinetic-routine/*" element={<KineticRoutinePage />} />
         </Routes>
       </main>
